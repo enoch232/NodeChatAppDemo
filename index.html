@@ -3,39 +3,61 @@
 	<title>NodeChatApp</title>
 	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 	<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<style>
 		body{
-			background-color:#E0E3DA
+			font-family: 'Open Sans', sans-serif;
+			background-color:#E0E3DA;
 		}
 		#text{
 			display: inline-block;
 			background-color:#FFFFF3;
 			font-size:2rem;
 			resize:none;
+			float:left;
+			border-radius: 0.3rem;
 		}
 		#submit{
 			display: inline-block;
 			border-radius: 0.3rem;
 			width:3rem;
-			height:2rem;
+			height:1rem;
 			background-color: #ef5285;
 			text-align:center;
-			padding:0.5rem;
+			padding:1rem;
+			float:right;
+			color:white;
 
+		}
+		input:focus,
+		select:focus,
+		textarea:focus,
+		button:focus {
+		    outline: none;
+		}
+		.text-holder{
+			width:50%;
+			margin: 0 auto;
+			height:30rem;
+			background-color:white;
+			border-radius:0.3rem;
+			margin-bottom:1rem;
+			margin-top:2rem;
 		}
 	</style>
 </head>
 <body>
-	<div>
+	<div class = "text-holder">
+	</div>
+	<div style = "width:50%;margin:0 auto">
 		<div>
-			<textarea rows = "1" cols = "25" id = "text"></textarea>
+			<textarea rows = "1" cols = "26" id = "text"></textarea>
 			<div id = "submit">Send</div>
 		</div>
 	</div>
 	<script>
 		$(document).ready(function(){
 			var socket = io.connect();
-
 		});
 
 	</script>
