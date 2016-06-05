@@ -17,4 +17,7 @@ io.sockets.on("connection", function(socket){
 		connections.splice(connections.indexOf(socket), 1);
 		console.log("Connected: %s Users", connections.length);
 	});
+	socket.on("send message", function(data){
+		io.sockets.emit("new message", {message: data});
+	});
 });

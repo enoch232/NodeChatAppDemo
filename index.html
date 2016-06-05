@@ -3,14 +3,41 @@
 	<title>NodeChatApp</title>
 	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 	<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+	<style>
+		body{
+			background-color:#E0E3DA
+		}
+		#text{
+			display: inline-block;
+			background-color:#FFFFF3;
+			font-size:2rem;
+			resize:none;
+		}
+		#submit{
+			display: inline-block;
+			border-radius: 0.3rem;
+			width:3rem;
+			height:2rem;
+			background-color: #ef5285;
+			text-align:center;
+			padding:0.5rem;
+
+		}
+	</style>
 </head>
 <body>
-	Hello world
+	<div>
+		<div>
+			<textarea rows = "1" cols = "25" id = "text"></textarea>
+			<div id = "submit">Send</div>
+		</div>
+	</div>
 	<script>
 		$(document).ready(function(){
 			var socket = io.connect();
 
 		});
+
 	</script>
 
 </body>
