@@ -58,6 +58,14 @@
 	<script>
 		$(document).ready(function(){
 			var socket = io.connect();
+			$("#submit").on("click", function(){
+				var text = $("#text").val();
+				$("#text").val("");
+				socket.emit("send message", text);
+			});
+			socket.on("new message", function(data){
+				$(".text-holder").append("<div style = 'width:100%'>"+data.message+"</div>")
+			});
 		});
 
 	</script>
